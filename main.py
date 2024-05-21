@@ -19,3 +19,18 @@ for node in G.nodes(data=True):
 
 for edge in G.edges(data=True):
     print("Flight:", edge)
+
+
+# Add capacity constraints to airports
+G.nodes["Airport_A"]["passenger_capacity"] = 500
+G.nodes["Airport_B"]["passenger_capacity"] = 700
+G.nodes["Airport_C"]["passenger_capacity"] = 600
+
+# Add maximum number of flights departing from each airport
+G.nodes["Airport_A"]["max_departures"] = 5
+G.nodes["Airport_B"]["max_departures"] = 4
+G.nodes["Airport_C"]["max_departures"] = 6
+
+# Display updated airport attributes
+for node in G.nodes(data=True):
+    print("Airport:", node)
