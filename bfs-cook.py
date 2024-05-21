@@ -17,7 +17,7 @@ class Graph:
             u = queue.popleft()
             
             for v, capacity in enumerate(self.graph[u]):
-                if not visited[v] and capacity > 0:  # Check for unvisited and positive capacity
+                if not visited[v] and capacity > 0:
                     queue.append(v)
                     visited[v] = True
                     parent[v] = u
@@ -52,8 +52,7 @@ class Graph:
 vertices = 4
 graph = Graph(vertices)
 
-# Adding edges along with capacities (maximum passengers)
-# Example: graph.add_edge(u, v, capacity)
+# Edges along with capacities (maximum passengers)
 graph.add_edge(0, 1, 30)  # A -> B
 graph.add_edge(0, 2, 20)  # A -> C
 graph.add_edge(1, 2, 10)  # B -> C
